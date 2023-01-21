@@ -8,8 +8,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,12 +15,14 @@ class _HomePageState extends State<HomePage> {
         title: const Text("List Todo's"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-  
-        ),
+        child: ListView.builder(
+            itemCount: 11,
+            itemBuilder: ((context, index) {
+              return ListTile(
+                title: Text('item $index'),
+              );
+            })),
       ),
-  
     );
   }
 }
