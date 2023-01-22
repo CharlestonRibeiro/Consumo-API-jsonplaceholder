@@ -1,16 +1,18 @@
 # Consumo API todos
 
-A new Flutter project.
+Consumo de uma API utilizando Flutter. Desenvolvido seguindo a playlist do [Flutterando](https://www.youtube.com/playlist?list=PLlBnICoI-g-d-J57QIz6Tx5xtUDGQdBFB). 
 
-## Getting Started
+- [x] Flutter.
+- [x] ValueNotifier.
 
-This project is a starting point for a Flutter application.
+## API:
+Url para acesso ao JSON: <https://jsonplaceholder.typicode.com/todos>
 
-A few resources to get you started if this is your first Flutter project:
+## Package:
+- [DIO](https://pub.dev/packages/dio)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Tela
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+<img src="https://github.com/CharlestonRibeiro/Consumo-API-todos/blob/main/image/screen.png?raw=true" width="200" height="400" />
+</p>
