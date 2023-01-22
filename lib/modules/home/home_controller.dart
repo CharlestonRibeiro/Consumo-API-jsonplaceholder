@@ -5,24 +5,21 @@ import 'package:flutter/material.dart';
 
 class HomeController extends ChangeNotifier {
   List<TodoModel> todos = [];
-  final repository = TodoRepository();
 
-  HomeState _homeState = HomeInitialState();
-  HomeState get state => _homeState;
+  final TodoRepository _todoRepository;
+  final state = ValueNotifier<HomeState>(HomeState.start);
 
-  void _updateState(HomeState newState) {
-    _homeState = newState;
-    notifyListeners();
-  }
+  HomeController(TodoRepository? todoRepository)
+      : _todoRepository = todoRepository ?? TodoRepository();
 
   Future start() async {
-    _updateState(HomeLoadingState());
+    state.value = HomeState.loading;
     try {
-      todos = await repository.fetchTodos();
-      _updateState(HomeSuccessState());
+      todos = await _todoRepository.fetchTodos();
+      state.value = HomeState.success;
+      return todos;
     } catch (e) {
-      String erro = 'Erro API não encontrada';
-      _updateState(HomeErrorState(erro));
+      state.value = HomeState.error;
     }
   }
 }

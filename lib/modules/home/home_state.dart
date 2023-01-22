@@ -1,12 +1,2 @@
-abstract class HomeState {}
+enum HomeState {start, loading, success, error}
 
-class HomeInitialState extends HomeState {}
-
-class HomeLoadingState extends HomeState {}
-
-class HomeSuccessState extends HomeState {}
-
-class HomeErrorState extends HomeState {
-  final String message;
-  HomeErrorState(this.message);
-}
