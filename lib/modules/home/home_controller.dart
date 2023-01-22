@@ -3,7 +3,7 @@ import 'package:consumindo_api_jsonplaceholder/modules/home/home_state.dart';
 import 'package:consumindo_api_jsonplaceholder/repositories/todo_repository.dart';
 import 'package:flutter/material.dart';
 
-class HomeController extends ChangeNotifier {
+class HomeController {
   List<TodoModel> todos = [];
 
   final TodoRepository _todoRepository;
